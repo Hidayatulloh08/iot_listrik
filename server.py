@@ -125,6 +125,6 @@ def get_data():
     df = pd.read_csv(FILE)
     return df.tail(50).to_json(orient='records')
 
-
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=8080)
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host='0.0.0.0', port=port)
